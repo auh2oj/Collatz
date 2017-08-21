@@ -23,7 +23,11 @@ Enter a Number: <input type="number" name="number" />
 
 <%
 CollatzWrapper cw = (CollatzWrapper) request.getAttribute("cw");
-if (cw == null) return;
+if (cw == null || cw.getNum() < 1) {
+	%> <br>Invalid input!
+	<%
+	return;
+}
 %>
 
 <h3>The number you entered (<%= cw.getNum() %>) takes the following <%= cw.getNumSteps() %> steps:</h3>

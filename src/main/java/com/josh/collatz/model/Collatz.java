@@ -15,6 +15,12 @@ public class Collatz {
 		long numSteps = 1;
 		CollatzWrapper cw = new CollatzWrapper();
 		cw.setNum(num);
+		
+		if (num < 1) {
+			cw.setSteps(steps);
+			return cw;
+		}
+		
 		steps.add(num);
 		
 		while (num != 1) {
